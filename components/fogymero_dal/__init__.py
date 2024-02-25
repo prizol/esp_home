@@ -40,15 +40,15 @@ def to_code(config):
     if CONF_I1 in config:
         conf = config[CONF_I1]
         sens = yield sensor.new_sensor(conf)
-        cg.add(var.set_vdc_i1_sensor(sens))
+        cg.add(var.set_i1_sensor(sens))
 
     if CONF_I2 in config:
         conf = config[CONF_I2]
         sens = yield sensor.new_sensor(conf)
-        cg.add(var.set_vdc_i2_sensor(sens))
+        cg.add(var.set_i2_sensor(sens))
 
     if CONF_I3 in config:
         conf = config[CONF_I3]
         sens = yield sensor.new_sensor(conf)
-        cg.add(var.set_vdc_i3_sensor(sens))
+        cg.add(var.set_i3_sensor(sens))
     
