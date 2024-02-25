@@ -32,6 +32,23 @@ CONFIG_SCHEMA = cv.Schema({
         sensor.sensor_schema(device_class=DEVICE_CLASS_CURRENT,unit_of_measurement=UNIT_AMPERE,accuracy_decimals=1,state_class=STATE_CLASS_MEASUREMENT).extend(),
 }).extend(cv.polling_component_schema('60s')).extend(uart.UART_DEVICE_SCHEMA)
 
+def to_code(config):
+    var = cg.new_Pvariable(config[CONF_ID])
+    yield cg.register_component(var, config)
+    yield uart.register_uart_device(var, config)
+    
+    if CONF_I1 in config:
+        conf = config[CONF_I1]
+        sens = yield sensor.new_sensor(conf)
+        cg.add(var.set_vdc_i1_sensor(sens))
 
-)
+    if CONF_I2 in config:
+        conf = config[CONF_I2]
+        sens = yield sensor.new_sensor(conf)
+        cg.add(var.set_vdc_i2_sensor(sens))
 
+    if CONF_I3 in config:
+        conf = config[CONF_I3]
+        sens = yield sensor.new_sensor(conf)
+        cg.add(var.set_vdc_i3_sensor(sens))
+    
