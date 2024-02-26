@@ -10,7 +10,7 @@ from esphome.const import (
 
 fogymero_dal_ns = cg.esphome_ns.namespace("fogymero_dal")
 FogymeroDalComponent = fogymero_dal_ns.class_(
-    "FogymeroDalComponent", cg.Component, uart.UARTDevice
+    "FogymeroDalComponent", cg.Component, uart.UARTDevice)
 
 CODEOWNERS = ["@prizol"]
 
