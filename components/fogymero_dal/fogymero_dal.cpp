@@ -44,14 +44,14 @@ void FogymeroDalComponent::loop() {
     this->sensorupdateprogress--;
   }
 
-  static char buffer[SOLIS_S5_SERIAL_BUFFER_LEN] = {0};
+  static char buffer[300] = {0};
   static uint8_t index = 0;
   static uint8_t loopwait = 0;
 
   while (available()) {
     buffer[index] = read();
     index++;
-    index%=SOLIS_S5_SERIAL_BUFFER_LEN;
+    index%=300;
     loopwait = 0;
   }
   if (index > 0) {
