@@ -104,7 +104,7 @@ void FogymeroDalComponent::update() {
   }
 }
 
-void SolisS5Component::dump_config() {
+void FogymeroDalComponent::dump_config() {
   ESP_LOGCONFIG(TAG, "Fogymérő DAL");
 }
 
