@@ -28,7 +28,7 @@ class FogymeroDalComponent : public PollingComponent, public uart::UARTDevice {
     sensor::Sensor *i2sensor;
     sensor::Sensor *i3sensor;
 
-    char messagedata[SOLIS_S5_SERIAL_BUFFER_LEN] = {0};
+    char messagedata[300] = {0};
     uint8_t messagelength = 0;
     volatile uint8_t sensorupdateprogress = 0;
 
