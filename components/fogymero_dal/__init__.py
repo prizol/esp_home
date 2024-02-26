@@ -2,11 +2,7 @@ import re
 import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.components import sensor,uart
-from esphome.const import (
-    CONF_ID,
-    CONF_RECEIVE_TIMEOUT,
-    CONF_UPDATE_INTERVAL,
-)
+from esphome.const import *
 
 fogymero_dal_ns = cg.esphome_ns.namespace("fogymero_dal")
 FogymeroDalComponent = fogymero_dal_ns.class_(
