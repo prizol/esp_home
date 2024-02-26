@@ -92,7 +92,7 @@ void FogymeroDalComponent::loop() {
     index = 0;
   }
 
-}
+
 
 void FogymeroDalComponent::update() {
   if (this->messagelength > 0) { // if there's a message pending
