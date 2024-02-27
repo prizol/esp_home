@@ -17,6 +17,17 @@ void FogymeroDalComponent::setup() {
 
 void FogymeroDalComponent::loop() {
 
+if (Serial.available() <= 0) {  
+Serial.write (0x10);
+Serial.write (0x5B);
+Serial.write (0xFE);
+Serial.write (0x59);
+Serial.write (0x16);  
+delay(300);
+  }
+  
+  
+
   if (this->sensorupdateprogress > 0) {
     switch (this->sensorupdateprogress) {
       case 3:
