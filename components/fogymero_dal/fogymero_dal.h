@@ -31,7 +31,7 @@ class FogymeroDalComponent : public PollingComponent, public uart::UARTDevice {
     char messagedata[300] = {0};
     uint8_t messagelength = 0;
     volatile uint8_t sensorupdateprogress = 0;
-    bool 7Buzenet_kell = false;
+    bool _7Buzenet_kell = false;
 
 };
 
