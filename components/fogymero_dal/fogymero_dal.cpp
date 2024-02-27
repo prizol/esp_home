@@ -33,7 +33,7 @@ Serial.write (0xFE);
 Serial.write (0x59);
 Serial.write (0x16); 
       }
-delay(300);
+delay(3000);
   }
   
   
