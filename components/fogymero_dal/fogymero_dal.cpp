@@ -34,7 +34,7 @@ write (0xFE);
 write (0x59);
 write (0x16); 
       }
-delay(3000);
+delay(1500);
   }
   
   
