@@ -101,8 +101,10 @@ void FogymeroDalComponent::update() {
     this->sensorupdateprogress = 3; // start to update sensors
   } else {
     ESP_LOGV(TAG, "no data received");
+    this->messagelength=1; 
   }
 }
+
 
 void FogymeroDalComponent::dump_config() {
   ESP_LOGCONFIG(TAG, "Fogymérő DAL");
