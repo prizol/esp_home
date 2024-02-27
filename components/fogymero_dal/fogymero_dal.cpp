@@ -18,11 +18,21 @@ void FogymeroDalComponent::setup() {
 void FogymeroDalComponent::loop() {
 
 if (Serial.available() <= 0) {  
+  if (this->7Buzenet_kell) {
+    Serial.write (0x10);
+    Serial.write (0x7B);
+    Serial.write (0xFE);
+    Serial.write (0x79);
+    Serial.write (0x16);
+     }
+  else
+    {
 Serial.write (0x10);
 Serial.write (0x5B);
 Serial.write (0xFE);
 Serial.write (0x59);
-Serial.write (0x16);  
+Serial.write (0x16); 
+      }
 delay(300);
   }
   
