@@ -30,8 +30,8 @@ if (available() <= 0) {
 write (0x10);
 write (0x5B);
 write (0xFE);
-write (0x59);
-write (0x16); 
+//write (0x59);
+//write (0x16); 
       }
 delay(3000);
   }
