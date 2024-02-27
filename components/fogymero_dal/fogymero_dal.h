@@ -17,9 +17,9 @@ class FogymeroDalComponent : public PollingComponent, public uart::UARTDevice {
     void update() override;
     void dump_config() override;
 
-    void set_I1_sensor(sensor::Sensor *s) { i1sensor = s; }
-    void set_I2_sensor(sensor::Sensor *s) { i2sensor = s; }
-    void set_I3_sensor(sensor::Sensor *s) { i3sensor = s; }
+    void set_i1_sensor(sensor::Sensor *s) { i1sensor = s; }
+    void set_i2_sensor(sensor::Sensor *s) { i2sensor = s; }
+    void set_i3_sensor(sensor::Sensor *s) { i3sensor = s; }
     
 
   protected:
