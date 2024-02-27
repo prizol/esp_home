@@ -73,6 +73,8 @@ delay(1500);
   static uint8_t loopwait = 0;
 
   while (available()) {
+    ESP_LOGV(TAG, "adatok beolvasása...");
+    
     buffer[index] = read();
     index++;
     index%=300;
