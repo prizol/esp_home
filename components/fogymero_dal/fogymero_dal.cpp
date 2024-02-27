@@ -91,12 +91,12 @@ delay(1500);
       
       } else {
         ESP_LOGV(TAG, "Nem a jó válasz jött");
-        this->_7Buzenet_kell=this->!_7Buzenet_kell;
+        this->_7Buzenet_kell= !this->_7Buzenet_kell;
       }
     } else {
       ESP_LOGV(TAG, "message received, invalid start character");
     }
-    */
+    
     // reset message, ready for next one
     loopwait = 0;
     index = 0;
