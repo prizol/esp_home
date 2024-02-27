@@ -13,6 +13,7 @@ static const char *TAG = "fogymero_dal";
 
 void FogymeroDalComponent::setup() {
   // nothing to do here
+  begin(2400,SERIAL_8E1);
 }
 
 void FogymeroDalComponent::loop() {
