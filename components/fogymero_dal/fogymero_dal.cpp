@@ -22,6 +22,7 @@ void FogymeroDalComponent::loop() {
       case 3:
         if (this->i1sensor != nullptr) {
           uint16_t v = this->messagedata[1] + this->messagedata[2]*256;
+          v=253;
           this->i1sensor->publish_state((float)v * 0.1f);
         }
         break;
