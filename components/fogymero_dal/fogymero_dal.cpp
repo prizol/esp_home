@@ -30,7 +30,7 @@ void FogymeroDalComponent::loop() {
       case 2:
         if (this->i2sensor != nullptr) {
           uint16_t v = this->messagedata[3] + this->messagedata[4]*256;
-          this->i1sensor->publish_state((float)v * 0.1f);
+          this->i2sensor->publish_state((float)v * 0.1f);
         }
         break;
 
@@ -38,7 +38,7 @@ void FogymeroDalComponent::loop() {
         if (this->i3sensor != nullptr) {
           uint16_t v = this->messagedata[5] + this->messagedata[6]*256;
           v=253;
-          this->i1sensor->publish_state((float)v * 0.1f);
+          this->i3sensor->publish_state((float)v * 0.1f);
         }
         break;
       
