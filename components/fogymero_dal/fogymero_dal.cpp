@@ -87,7 +87,7 @@ delay(1500);
     if (buffer[0] == 68) { // message starts with the right preamble
       
       if (buffer[11] == 42) { //a kettes számú válasz jött
-        
+        this->messagelength = 1;
       
       } else {
         ESP_LOGV(TAG, "Nem a jó válasz jött");
@@ -111,7 +111,7 @@ void FogymeroDalComponent::update() {
     this->sensorupdateprogress = 3; // start to update sensors
   } else {
     ESP_LOGV(TAG, "no data received");
-    this->messagelength=1; 
+   
   }
 }
 
