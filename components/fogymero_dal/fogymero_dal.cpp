@@ -74,7 +74,7 @@ delay(1500);
 
   while (available()) {
     ESP_LOGV(TAG, "adatok beolvasása...");
-    
+    delay(2000);
     buffer[index] = read();
     index++;
     index%=300;
