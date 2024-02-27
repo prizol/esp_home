@@ -81,31 +81,17 @@ delay(1500);
   if (index > 0) {
     loopwait++;
   }
-  /*
-  if (loopwait > SOLIS_S5_LOOP_WAIT) { // some time has passed without receiving another character. this should be the end of a message.
+  
+  if (loopwait > 3) { //Ha három loop ideig nem jött semmi, akko vége az üzenetnek 
     ESP_LOGV(TAG, "message recieved len=%d", index);
-    if (buffer[0] == 126) { // message starts with the right preamble
-      uint8_t msglen = buffer[3];
-      if (index == msglen + 5) { // messasge has correct length
-        uint8_t csum = 0;
-        for (uint8_t i = 1; i < msglen+4; i++) { // csum after preamble, before tx csum
-          csum += buffer[i];
-        }
-        if (csum == buffer[msglen+4]) { // checksum ok
-          if ((buffer[2] == 161) && (msglen == 80)) { // inverter response
-            memcpy(this->messagedata,buffer,SOLIS_S5_SERIAL_BUFFER_LEN); // copy message for processing on next update cycle
-            this->messagelength = index; // length > 0 indicates the message data has been updated / ready for parsing
-            ESP_LOGD(TAG, "inverter data received");
-          } else if ((buffer[2] == 193) && (msglen == 40)) { // inverter config response
-            ESP_LOGD(TAG, "inverter config response received");
-          }
-        } else {
-          ESP_LOGV(TAG, "message checksum fail; discarding. csum = 0x%02X, check = 0x%02X", buffer[msglen+4], csum);
-        }
-      } else if ((msglen == 0) && (index == 55)) { // wifi stick command
-        ESP_LOGD(TAG, "wifi stick command received; ignoring");
+    if (buffer[0] == 68) { // message starts with the right preamble
+      
+      if (buffer[11] == 42) { //a kettes számú válasz jött
+        
+      
       } else {
-        ESP_LOGV(TAG, "message insufficient length (requested: %d, received: %d); discarding", msglen+5, index);
+        ESP_LOGV(TAG, "Nem a jó válasz jött");
+        this->_7Buzenet_kell=this->!_7Buzenet_kell;
       }
     } else {
       ESP_LOGV(TAG, "message received, invalid start character");
