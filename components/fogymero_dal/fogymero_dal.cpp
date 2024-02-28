@@ -34,7 +34,7 @@ write (0xFE);
 write (0x59);
 write (0x16); 
       }
-delay(1000);
+delay(100);
   }
   
   
@@ -43,7 +43,7 @@ delay(1000);
     switch (this->sensorupdateprogress) {
       case 3:
         if (this->i1sensor != nullptr) {
-          uint16_t v = this->messagedata[1] + this->messagedata[2]*256;
+          uint16_t v = this->messagedata[81] + this->messagedata[82]*256;
           
           this->i1sensor->publish_state((float)v * 0.1f);
         }
@@ -51,14 +51,14 @@ delay(1000);
 
       case 2:
         if (this->i2sensor != nullptr) {
-          uint16_t v = this->messagedata[3] + this->messagedata[4]*256;
+          uint16_t v = this->messagedata[90] + this->messagedata[91]*256;
           this->i2sensor->publish_state((float)v * 0.1f);
         }
         break;
 
       case 1:
         if (this->i3sensor != nullptr) {
-          uint16_t v = this->messagedata[81] + this->messagedata[82]*256;
+          uint16_t v = this->messagedata[99] + this->messagedata[100]*256;
           this->i3sensor->publish_state((float)v * 0.01f);
         }
         break;
@@ -79,12 +79,12 @@ delay(1000);
   }
   if (index > 0) {
     loopwait++;
-    ESP_LOGV(TAG, "message recieved len=%d", index);
+    /*ESP_LOGV(TAG, "message recieved len=%d", index);
     ESP_LOGV(TAG, "message byte 80=%d", buffer[80]);
         ESP_LOGV(TAG, "message byte 81=%d", buffer[81]);
         ESP_LOGV(TAG, "message byte 82=%d", buffer[82]);
         ESP_LOGV(TAG, "message byte 83=%d", buffer[83]);
-        ESP_LOGV(TAG, "message byte 84=%d", buffer[84]);
+        ESP_LOGV(TAG, "message byte 84=%d", buffer[84]);*/
   }
   
   if (loopwait > 0) { 
