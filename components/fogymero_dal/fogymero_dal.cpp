@@ -34,7 +34,7 @@ write (0xFE);
 write (0x59);
 write (0x16); 
       }
-delay(1500);
+delay(1000);
   }
   
   
@@ -89,7 +89,7 @@ delay(1500);
   }
   
   if (loopwait > 0) { 
-    if (buffer[0] == 0x68) { // message starts with the right preamble
+    if (buffer[0] == 0x74) { // message starts with the right preamble
       ESP_LOGV(TAG, "A jó ID-jú válasz jött");
       if (buffer[1] == 0x43) { //a kettes számú válasz jött
         ESP_LOGV(TAG, "A második válasz jött");
