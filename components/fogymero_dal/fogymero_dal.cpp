@@ -77,6 +77,7 @@ delay(1500);
     index++;
     index%=300;
     loopwait = 0;
+    ESP_LOGV(TAG, "valami jott");
   }
   if (index > 0) {
     loopwait++;
