@@ -80,7 +80,7 @@ delay(1500);
   }
   if (index > 0) {
     loopwait++;
-    ESP_LOGV(TAG, "valami jott");
+    ESP_LOGV(TAG, "message recieved len=%d", index);
   }
   
   if (loopwait > 3) { //Ha három loop ideig nem jött semmi, akko vége az üzenetnek 
