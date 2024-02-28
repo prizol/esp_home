@@ -88,6 +88,12 @@ delay(1500);
     if (buffer[0] == 0x68) { // message starts with the right preamble
       
       if (buffer[11] == 0x42) { //a kettes számú válasz jött
+        ESP_LOGV(TAG, "A jó válasz jött");
+        ESP_LOGV(TAG, "message byte 0=%d", buffer[0]);
+        ESP_LOGV(TAG, "message byte 1=%d", buffer[1]);
+        ESP_LOGV(TAG, "message byte 2=%d", buffer[2]);
+        ESP_LOGV(TAG, "message byte 3=%d", buffer[3]);
+        ESP_LOGV(TAG, "message byte 4=%d", buffer[4]);
         this->messagelength = 1;
       
       } else {
