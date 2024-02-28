@@ -79,12 +79,12 @@ delay(1000);
   }
   if (index > 0) {
     loopwait++;
-    /*ESP_LOGV(TAG, "message recieved len=%d", index);
-    ESP_LOGV(TAG, "message byte 0=%d", buffer[0]);
-        ESP_LOGV(TAG, "message byte 1=%d", buffer[1]);
-        ESP_LOGV(TAG, "message byte 2=%d", buffer[2]);
-        ESP_LOGV(TAG, "message byte 3=%d", buffer[3]);
-        ESP_LOGV(TAG, "message byte 4=%d", buffer[4]);*/
+    ESP_LOGV(TAG, "message recieved len=%d", index);
+    ESP_LOGV(TAG, "message byte 80=%d", buffer[80]);
+        ESP_LOGV(TAG, "message byte 81=%d", buffer[81]);
+        ESP_LOGV(TAG, "message byte 82=%d", buffer[82]);
+        ESP_LOGV(TAG, "message byte 83=%d", buffer[83]);
+        ESP_LOGV(TAG, "message byte 84=%d", buffer[84]);
   }
   
   if (loopwait > 0) { 
