@@ -88,7 +88,7 @@ delay(1500);
         ESP_LOGV(TAG, "message byte 4=%d", buffer[4]);
   }
   
-  if (loopwait > 3) { //Ha három loop ideig nem jött semmi, akko vége az üzenetnek 
+  if (loopwait > 0) { 
     ESP_LOGV(TAG, "message recieved len=%d", index);
     if (buffer[0] == 0x68) { // message starts with the right preamble
       ESP_LOGV(TAG, "A jó ID-jú válasz jött");
