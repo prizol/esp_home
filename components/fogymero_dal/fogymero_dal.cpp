@@ -102,6 +102,13 @@ delay(1500);
       }
     } else {
       ESP_LOGV(TAG, "message received, invalid start character");
+      if (this->_7Buzenet_kell) {
+          this->_7Buzenet_kell=false;
+         }
+        else
+         {
+          this->_7Buzenet_kell=true;
+        }
     }
      }
     // reset message, ready for next one
