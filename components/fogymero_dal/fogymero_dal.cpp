@@ -89,9 +89,9 @@ delay(1000);
   }
   
   if (loopwait > 0) { 
-    if (buffer[0] == 0x74) { // message starts with the right preamble
+    if (buffer[0] == 0x68) { // message starts with the right preamble
       ESP_LOGV(TAG, "A jó ID-jú válasz jött");
-      if (buffer[1] == 0x43) { //a kettes számú válasz jött
+      if (buffer[1] == 0x74) { //a kettes számú válasz jött
         ESP_LOGV(TAG, "A második válasz jött");
         
         this->messagelength = 1;
