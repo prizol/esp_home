@@ -58,7 +58,7 @@ delay(1000);
 
       case 1:
         if (this->i3sensor != nullptr) {
-          uint16_t v = buffer[81] + buffer[82]*256;
+          uint16_t v = this->messagedata[81] + this->messagedata[82]*256;
           this->i3sensor->publish_state((float)v * 0.01f);
         }
         break;
@@ -92,8 +92,10 @@ delay(1000);
       //ESP_LOGV(TAG, "A jó ID-jú válasz jött");
       if (buffer[1] == 0x74) { //a kettes számú válasz jött
         //ESP_LOGV(TAG, "A második válasz jött");
-        
-        this->messagelength = 1;
+
+        memcpy(this->messagedata,buffer,150); // copy message for processing on next update cycle
+            this->messagelength = index; // length > 0 indicates the message data has been updated / ready for parsing
+       
       
       } else {
         ESP_LOGV(TAG, "Nem a jó válasz jött");
