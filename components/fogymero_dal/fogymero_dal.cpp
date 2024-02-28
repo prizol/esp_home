@@ -85,9 +85,9 @@ delay(1500);
   
   if (loopwait > 3) { //Ha három loop ideig nem jött semmi, akko vége az üzenetnek 
     ESP_LOGV(TAG, "message recieved len=%d", index);
-    if (buffer[0] == 68) { // message starts with the right preamble
+    if (buffer[0] == 0x68) { // message starts with the right preamble
       
-      if (buffer[11] == 42) { //a kettes számú válasz jött
+      if (buffer[11] == 0x42) { //a kettes számú válasz jött
         this->messagelength = 1;
       
       } else {
