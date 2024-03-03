@@ -20,9 +20,13 @@ class ElektromosKazanComponent : public PollingComponent {
     void set_i1_sensor(sensor::Sensor *s) { i1sensor = s; }
     void set_i2_sensor(sensor::Sensor *s) { i2sensor = s; }
     void set_i3_sensor(sensor::Sensor *s) { i3sensor = s; }
+
+    void set_data(int aram) { i1_mert = aram; }
     
 
   protected:
+
+    int aram;
 
     sensor::Sensor *i1sensor;
     sensor::Sensor *i2sensor;
