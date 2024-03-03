@@ -6,7 +6,7 @@ from esphome.const import *
 
 elektromos_kazan_ns = cg.esphome_ns.namespace("elektromos_kazan")
 ElektromosKazanComponent = elektromos_kazan_ns.class_(
-    "ElektromosKazanComponent", cg.Component, uart.UARTDevice)
+    "ElektromosKazanComponent", cg.Component)
 
 CODEOWNERS = ["@prizol"]
 
