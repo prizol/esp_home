@@ -17,7 +17,8 @@ void ElektromosKazanComponent::setup() {
 
 void ElektromosKazanComponent::loop() {
 
-
+  this->i1_mert;
+  
   }
 
 
