@@ -18,10 +18,12 @@ CONF_I3 = "aram_3"
 
 CONFIG_SCHEMA = cv.Schema({
     cv.GenerateID(): cv.declare_id(ElektromosKazanComponent),
-    cv.Optional(CONF_I1): sensor.sensor_schema(UNIT_AMPERE, ICON_FLASH),
-    cv.Optional(CONF_I2): sensor.sensor_schema(UNIT_AMPERE, ICON_FLASH, 2),
-    cv.Optional(CONF_I3): sensor.sensor_schema(UNIT_AMPERE, ICON_FLASH, 2),
-
+    cv.Optional(CONF_I1):
+        sensor.sensor_schema(device_class=DEVICE_CLASS_CURRENT,unit_of_measurement=UNIT_AMPERE,accuracy_decimals=1,state_class=STATE_CLASS_MEASUREMENT).extend(),
+    cv.Optional(CONF_I2):
+        sensor.sensor_schema(device_class=DEVICE_CLASS_CURRENT,unit_of_measurement=UNIT_AMPERE,accuracy_decimals=1,state_class=STATE_CLASS_MEASUREMENT).extend(),
+    cv.Optional(CONF_I3):
+        sensor.sensor_schema(device_class=DEVICE_CLASS_CURRENT,unit_of_measurement=UNIT_AMPERE,accuracy_decimals=1,state_class=STATE_CLASS_MEASUREMENT).extend(),
 }).extend(cv.polling_component_schema('60s'))
 
 def to_code(config):
