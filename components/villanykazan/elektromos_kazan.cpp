@@ -17,7 +17,7 @@ void ElektromosKazanComponent::setup() {
 
 void ElektromosKazanComponent::loop() {
 
- this->i1_sensor = this->i1_mert;
+ this->i1sensor = this->i1_mert;
   
   }
 
