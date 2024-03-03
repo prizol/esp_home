@@ -20,7 +20,7 @@ CONFIG_SCHEMA = cv.Schema({
     cv.GenerateID(): cv.declare_id(ElektromosKazanComponent),
     cv.Optional(CONF_I1): sensor.sensor_schema(UNIT_AMPERE, ICON_FLASH, 2),
     cv.Optional(CONF_I2): sensor.sensor_schema(UNIT_AMPERE, ICON_FLASH, 2),
-    cv.Optional(CONF_I3) sensor.sensor_schema(UNIT_AMPERE, ICON_FLASH, 2),
+    cv.Optional(CONF_I3): sensor.sensor_schema(UNIT_AMPERE, ICON_FLASH, 2),
 
 }).extend(cv.polling_component_schema('60s'))
 
