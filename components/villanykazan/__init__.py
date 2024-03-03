@@ -22,7 +22,7 @@ CONFIG_SCHEMA = cv.Schema({
     cv.Optional(CONF_I2): sensor.sensor_schema(UNIT_AMPERE, ICON_FLASH, 2),
     cv.Optional(CONF_I13 sensor.sensor_schema(UNIT_AMPERE, ICON_FLASH, 2),
 
-}).extend(cv.polling_component_schema('60s'))
+}).extend(cv.polling_component_schema('60s')))
 
 def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
