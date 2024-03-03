@@ -26,7 +26,7 @@ class ElektromosKazanComponent : public PollingComponent {
 
   protected:
 
-    int aram;
+    int i1_mert;
 
     sensor::Sensor *i1sensor;
     sensor::Sensor *i2sensor;
