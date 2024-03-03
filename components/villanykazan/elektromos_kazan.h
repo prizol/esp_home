@@ -9,7 +9,7 @@
 namespace esphome {
 namespace elektromos_kazan {
 
-class ElwktromosKazanComponent : public PollingComponent {
+class ElektromosKazanComponent : public PollingComponent {
   public:
 
     void setup() override;
