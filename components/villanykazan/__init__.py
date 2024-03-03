@@ -15,6 +15,7 @@ AUTO_LOAD = ["sensor", "text_sensor", "switch", "binary_sensor"]
 CONF_I1 = "aram_1"
 CONF_I2 = "aram_2"
 CONF_I3 = "aram_3"
+CONF_I1_MERT = "aram_mert_L1"
 
 CONFIG_SCHEMA = cv.Schema({
     cv.GenerateID(): cv.declare_id(ElektromosKazanComponent),
@@ -24,12 +25,14 @@ CONFIG_SCHEMA = cv.Schema({
         sensor.sensor_schema(device_class=DEVICE_CLASS_CURRENT,unit_of_measurement=UNIT_AMPERE,accuracy_decimals=1,state_class=STATE_CLASS_MEASUREMENT).extend(),
     cv.Optional(CONF_I3):
         sensor.sensor_schema(device_class=DEVICE_CLASS_CURRENT,unit_of_measurement=UNIT_AMPERE,accuracy_decimals=1,state_class=STATE_CLASS_MEASUREMENT).extend(),
+    cv.Required(CONF_I1_MERT): cv.int_,
 }).extend(cv.polling_component_schema('60s'))
 
 def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
     yield cg.register_component(var, config)
   
+    cg.add(var.set_i1_mert(config[CONF_I1_MERT]))
     
     if CONF_I1 in config:
         conf = config[CONF_I1]
