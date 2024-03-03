@@ -4,8 +4,8 @@ import esphome.config_validation as cv
 from esphome.components import sensor,uart
 from esphome.const import *
 
-fogymero_dal_ns = cg.esphome_ns.namespace("elektromos_kazan")
-FogymeroDalComponent = elektromos_kazan_ns.class_(
+elektromos_kazan_ns = cg.esphome_ns.namespace("elektromos_kazan")
+ElektromosKazanComponent = elektromos_kazan_ns.class_(
     "ElektromosKazanComponent", cg.Component, uart.UARTDevice)
 
 CODEOWNERS = ["@prizol"]
