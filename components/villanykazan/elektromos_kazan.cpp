@@ -8,7 +8,7 @@
 namespace esphome {
 namespace elektromos_kazan {
 
-static const char *TAG = "fogymero_dal";
+static const char *TAG = "Villanykazán: ";
 
 void ElektromosKazanComponent::setup() {
   // nothing to do here
