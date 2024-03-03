@@ -17,8 +17,9 @@ void ElektromosKazanComponent::setup() {
 
 void ElektromosKazanComponent::loop() {
 
- this->i1sensor = this->i1_mert;
-  
+ 
+ uint16_t v = this->i1_mert;
+ this->i1sensor->publish_state((float)v * 0.1f); 
   }
 
 
