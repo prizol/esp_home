@@ -3,7 +3,7 @@
 //#include "esphome/components/text_sensor/text_sensor.h"
 //#include "esphome/components/binary_sensor/binary_sensor.h"
 #include "esphome/core/log.h"
-#include "fogymero_dal.h"
+#include "elektromos_kazan.h"
 
 namespace esphome {
 namespace elektromos_kazan {
