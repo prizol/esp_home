@@ -30,7 +30,7 @@ void ElektromosKazanComponent::update() {
 
 
 void ElektromosKazanComponent::dump_config() {
-  ESP_LOGCONFIG(TAG, "Fogymérő DAL");
+  ESP_LOGCONFIG(TAG, "dump lefutott");
 }
 
 } // namespace fogymerodal
