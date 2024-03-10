@@ -59,7 +59,7 @@ delay(600);
       case 1:
         if (this->i3sensor != nullptr) {
           uint16_t v = this->messagedata[99] + this->messagedata[100]*256;
-          this->i3sensor->publish_state((float)v * 0.01f);
+          this->i3sensor->publish_state((float)v * 0.1f);
         }
         break;
       
